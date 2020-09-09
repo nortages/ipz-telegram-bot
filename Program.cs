@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using Telegram.Bot.Types.ReplyMarkups;
 using System.Globalization;
 using Telegram.Bot.Types.InputFiles;
+using System.Threading;
 
 namespace IPZ_bot
 {
@@ -28,9 +29,7 @@ namespace IPZ_bot
             botClient.OnMessage += BotClient_OnMessage;
             botClient.StartReceiving();
 
-            Console.WriteLine("Press any key to exit");
-            Console.ReadKey();
-
+            Thread.Sleep(-1);
             botClient.StopReceiving();
         }
 
