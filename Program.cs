@@ -20,7 +20,7 @@ namespace IPZ_bot
 
         static void Main(string[] args)
         {
-            string cs = @$"URI=file:{Directory.GetCurrentDirectory()}\testDB.db;";
+            string cs = @$"URI=file:testDB.db;";
             con = new SQLiteConnection(cs);
             con.Open();
 
@@ -29,6 +29,7 @@ namespace IPZ_bot
             botClient.OnMessage += BotClient_OnMessage;
             botClient.StartReceiving();
 
+            Console.WriteLine("Bot has succesfully started");
             Thread.Sleep(-1);
             botClient.StopReceiving();
         }
